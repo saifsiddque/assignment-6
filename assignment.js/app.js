@@ -47,7 +47,7 @@ const displayCat = cat =>{
                         <div class="card-body">
                         <h5 class="card-title">${news.title}</h5>
                         <p class="card-text">${news.details.slice(0, 600)}...</p>
-                        <p class="card-text"><small class="text-muted"><span style="color:#2C23DB; ;" >Published Date:</span> ${news.author.published_date}&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2C23DB; ;" >Views:</span> ${news.total_view}</small></p>
+                        <p class="card-text"><small class="text-muted"><span style="color:#2C23DB; ;" >Published Date:</span> ${news.author.published_date ? news.author.published_date:'No data found'}&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:#2C23DB; ;" >Views:</span> ${news.total_view ? news.total_view: 'No data found'} </small></p>
                         <h5>
                         <img src="${news.author.img}" alt="" style="width:30px; border-radius: 50%;">
                          ${news.author.name ? news.author.name : 'No Data Found' }
