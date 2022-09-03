@@ -1,10 +1,32 @@
-const loadCat = () =>{
-    fetch("https://openapi.programming-hero.com/api/news/category/01")
+const loadCat = (search) =>{
+    const url = `https://openapi.programming-hero.com/api/news/category/${search}` 
+    fetch(url)
     .then(res => res.json())
     .then(data => displayCat(data.data));
 } 
+// const loadbtn = () =>{
+//     const url = `https://openapi.programming-hero.com/api/news/categories` 
+//     fetch(url)
+//     .then(res => res.json())
+//     .then(data => selectCat(data.data));
+// } 
+// const selectCat = btn =>{
+//     const btngroup = document.getElementById('btn-group');
+//     btn.forEach(news => {
+//         console.log(news);
+//         const btnDiv = document.createElement('div');
+//         btnDiv.classList.add('col');
+//         btnDiv.innerHTML = `
+//             <a href="#" onclick="loadCat('01');" class="btn btn-primary">Link</a>
+//         `;
+//         btngroup.appendChild(newsDiv);
+
+//     })
+//  }
+
 const displayCat = cat =>{
     const newscontainer = document.getElementById('news-container');
+    newscontainer.innerHTML = "";
     cat.forEach(news => {
         console.log(news);
         const newsDiv = document.createElement('div');
@@ -31,4 +53,3 @@ const displayCat = cat =>{
 
     })
  }
-loadCat();
