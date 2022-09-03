@@ -4,25 +4,6 @@ const loadCat = (search) =>{
     .then(res => res.json())
     .then(data => displayCat(data.data));
 } 
-// const loadbtn = () =>{
-//     const url = `https://openapi.programming-hero.com/api/news/categories` 
-//     fetch(url)
-//     .then(res => res.json())
-//     .then(data => selectCat(data.data));
-// } 
-// const selectCat = btn =>{
-//     const btngroup = document.getElementById('btn-group');
-//     btn.forEach(news => {
-//         console.log(news);
-//         const btnDiv = document.createElement('div');
-//         btnDiv.classList.add('col');
-//         btnDiv.innerHTML = `
-//             <a href="#" onclick="loadCat('01');" class="btn btn-primary">Link</a>
-//         `;
-//         btngroup.appendChild(newsDiv);
-
-//     })
-//  }
 
 const displayCat = cat =>{
     const newscontainer = document.getElementById('news-container');
@@ -51,5 +32,25 @@ const displayCat = cat =>{
         `;
         newscontainer.appendChild(newsDiv);
 
+    })
+ }
+const loadbtn = () =>{
+    const url = `https://openapi.programming-hero.com/api/news/categories` 
+    fetch(url)
+    .then(res => res.json())
+    .then(data => displaybtn(data.data.news_category));
+}
+loadbtn(); 
+const displaybtn = btns =>{
+    console.log(btns)
+    const btngroup = document.getElementById('btn-group');
+    btns.forEach(btn => {
+        console.log(btn);
+        const btnDiv = document.createElement('div');
+        btnDiv.innerHTML = `
+            <a href="#" onclick="loadCat('${btn.category_id}');" class="btn btn-primary">${btn.category_name}</a>
+        `;
+        btngroup.appendChild(btnDiv);
+       
     })
  }
