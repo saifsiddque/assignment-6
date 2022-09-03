@@ -7,6 +7,9 @@
     <title>NEWS</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
     <style>
+        body{
+          background-color: #f9f9f9;
+        }
         li{
             float: right;
         }
@@ -22,11 +25,31 @@
             font-weight: 800;
             color: #2C23DB;
         }
+        button{
+          background-color:#2C23DB ;
+          border: none;
+          border-radius:5px ;
+          float: right;
+          padding: 5px 10px;
+          color: white;
+        }
+
+        h2{
+          text-align: center;
+          color: #2C23DB;
+          margin-top: 40px;
+        }
+        .item-count{
+          background-color: white;
+          padding: 18px 10px;
+          font-weight: 700;
+          border-radius: 5px;
+        }
     </style>
 </head>
 <body>
-    <header class="container">
-        <nav class="navbar navbar-expand-lg bg-light text-end">
+    <header class="container-fluid">
+        <nav class="navbar navbar-expand-lg border-bottom text-end">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">news<span style="color: #2C23DB;">TODAY</span></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,10 +61,10 @@
                     <a class="nav-link active" aria-current="page" href="#"></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                    <a class="nav-link" href="index.html">News</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
+                    <a class="nav-link" href="blog.html">Blog</a>
                   </li>
                 </ul>
               </div>
@@ -49,17 +72,42 @@
           </nav>
     </header>
     <br>
+    
     <section  class="buttons">
         <div id="btn-group" class="btn-group">
         
         </div>
     </section>
     <br>
-   
+    <p class="item-count container"><span id="item-count"></span> items found for this category</p>
+    <div id="loader" class="d-flex justify-content-center d-none">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
     <section id="news-container" class="container">
         
     </section>
+    <h2 id="no-result-found" class="d-none">No Result Found !!!</h2>
+    <section>
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">Description</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div id="modal-body" class="modal-body">
+                
+              </div>
+            </div>
+        </div>
+    </section>
+   
+ 
     <script src="assignment.js/app.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
